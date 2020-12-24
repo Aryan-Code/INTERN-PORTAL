@@ -5,6 +5,11 @@
 ?>
 
 <?php
+if(!isset($_SESSION['email'])){
+      echo "<script>window.open('login.php','_self')</script>";
+    }else{
+        echo "<script>window.open('','_self')</script>";
+    }
   $email = $_SESSION['email'];
   $sql = "SELECT * FROM employer WHERE email = '$email'";
     $result = $db->query($sql);
